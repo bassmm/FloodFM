@@ -36,7 +36,7 @@ pnpm install
 ### Run Dev Server
 
 ```pwsh
-pnpm dev
+pnpm run dev
 ```
 
 The app will start on `http://localhost:5173` (or similar).
@@ -74,11 +74,6 @@ pnpm preview
 - Update villages in `src/constants/villages.ts`
 - Adjust thresholds in `src/constants/thresholds.ts`
 - Tweak styles in `src/styles/global.css` and `src/components/Map/FloodMap.css`
-
-## Known Limitations
-
-- Theme toggles library has peer warnings with React 19 (harmless with `pnpm`)
-- If remote GeoJSON is unavailable, district coloring may not render
 
 ## Troubleshooting
 
