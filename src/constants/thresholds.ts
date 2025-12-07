@@ -2,7 +2,7 @@ import type { AlertThresholds } from "../types/village.types";
 
 export const ALERT_THRESHOLDS: AlertThresholds = {
   warning: 1000,
-  critical: 3000,
+  critical: 2250,
 };
 
 export const FORECAST_DAYS = 7;
