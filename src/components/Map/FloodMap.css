@@ -1,0 +1,180 @@
+.flood-map {
+  z-index: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Choropleth styling */
+.leaflet-interactive {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.leaflet-interactive:hover {
+  stroke-width: 4;
+}
+
+/* Circle marker styling */
+circle.leaflet-interactive {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+circle.leaflet-interactive:hover {
+  r: 12;
+  stroke-width: 3;
+}
+
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+.marker-pin {
+  width: 24px;
+  height: 24px;
+  border-radius: 50% 50% 50% 0;
+  position: relative;
+  transform: rotate(-45deg);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.marker-pin:hover {
+  transform: rotate(-45deg) scale(1.3);
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.marker-pulse {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  animation: pulse 2s infinite;
+  opacity: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.leaflet-tooltip {
+  background-color: var(--pico-background-color, #fff) !important;
+  color: var(--pico-color, #000) !important;
+  border: 1px solid var(--pico-border-color, #ccc) !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  font-family: inherit !important;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: var(--pico-background-color, #fff) !important;
+}
+
+.leaflet-tooltip-bottom:before {
+  border-bottom-color: var(--pico-background-color, #fff) !important;
+}
+
+.leaflet-tooltip-left:before {
+  border-left-color: var(--pico-background-color, #fff) !important;
+}
+
+.leaflet-tooltip-right:before {
+  border-right-color: var(--pico-background-color, #fff) !important;
+}
+
+.leaflet-container {
+  font-family: inherit;
+}
+
+/* Fix zoom control button alignment */
+.leaflet-control-zoom a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: var(--pico-background-color, #fff) !important;
+  color: var(--pico-color, #000) !important;
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: var(--pico-card-background-color, #f4f4f4) !important;
+  color: var(--pico-color, #000) !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-bar a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-bar a:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.leaflet-bar a:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: none !important;
+}
+
+.leaflet-control-attribution {
+  background-color: var(--pico-background-color, rgba(255, 255, 255, 0.8)) !important;
+  color: var(--pico-color, #000) !important;
+  font-size: 0.7rem !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--pico-color-cyan-600, #0066cc) !important;
+}
+
+@media (max-width: 768px) {
+  .flood-map {
+    height: 400px !important;
+  }
+  
+  .marker-pin {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .marker-pin:hover {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  
+  .leaflet-tooltip {
+    font-size: 0.85em !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .flood-map {
+    height: 350px !important;
+    border-radius: 4px;
+  }
+}
