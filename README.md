@@ -3,6 +3,7 @@
 FloodFM is a React + TypeScript dashboard that monitors flood risk across villages in Pakistan using Open-Meteo's Flood API. It features an interactive choropleth map, severity-sorted village list, filters, and auto-refreshing data.
 
 ## Features
+
 - React 19 + Vite for fast development
 - Open-Meteo Flood API integration with graceful fallback
 - Villages list sorted by severity (critical > warning > normal)
@@ -13,6 +14,7 @@ FloodFM is a React + TypeScript dashboard that monitors flood risk across villag
 - Small right-aligned refresh icon in tab bar
 
 ## Tech Stack
+
 - React, TypeScript, Vite
 - Leaflet + react-leaflet
 - @picocss/pico
@@ -21,31 +23,38 @@ FloodFM is a React + TypeScript dashboard that monitors flood risk across villag
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+
 - pnpm (recommended)
 
 ### Install
+
 ```pwsh
 pnpm install
 ```
 
 ### Run Dev Server
+
 ```pwsh
 pnpm dev
 ```
+
 The app will start on `http://localhost:5173` (or similar).
 
 ### Build
+
 ```pwsh
 pnpm build
 ```
 
 ### Preview Production Build
+
 ```pwsh
 pnpm preview
 ```
 
 ## Project Structure (key files)
+
 - `src/App.tsx`: App shell, tabs, refresh icon
 - `src/components/Tabs/OverviewTab.tsx`: Dashboard view (shows warning/critical + map)
 - `src/components/Tabs/VillagesTab.tsx`: Villages view (filters + full list)
@@ -55,25 +64,31 @@ pnpm preview
 - `src/utils/*.ts`: Alert levels, formatting, calculations
 
 ## Map Notes
+
 - Pakistan districts GeoJSON (ADM2) is used for coloring by alert severity
 - Basemap opacity is reduced so choropleth colors are clearly visible
 - Map is constrained to Pakistan bounds and starts at zoom level 7
 
 ## Customization
+
 - Update villages in `src/constants/villages.ts`
 - Adjust thresholds in `src/constants/thresholds.ts`
 - Tweak styles in `src/styles/global.css` and `src/components/Map/FloodMap.css`
 
 ## Known Limitations
+
 - Theme toggles library has peer warnings with React 19 (harmless with `pnpm`)
 - If remote GeoJSON is unavailable, district coloring may not render
 
 ## Troubleshooting
+
 - If districts aren’t colored: ensure ADM2 GeoJSON loads (network tab) and village district names match GeoJSON properties (`ADM2_EN`/`NAME_2`).
 - If map shows the world: check `maxBounds` and `fitBounds` logic in `FloodMap.tsx`.
 
 ## License
+
 Proprietary project; do not redistribute without permission.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -93,9 +108,9 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
 
@@ -110,40 +125,40 @@ export default defineConfig([
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
     },
   },
-])
+]);
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
       // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
+      reactX.configs["recommended-typescript"],
       // Enable lint rules for React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
     },
   },
-])
+]);
 ```
