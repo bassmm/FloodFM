@@ -125,11 +125,11 @@ export function FloodMap({ villages, onVillageClick }: FloodMapProps) {
   return (
     <MapContainer
       center={[30.3753, 69.3451]}
-      zoom={7}
+      zoom={6}
       minZoom={5}
       maxZoom={10}
       style={{ height: '600px', width: '100%', borderRadius: '8px' }}
-      scrollWheelZoom={true}
+      scrollWheelZoom={false}
       className="flood-map"
       maxBounds={[[23.5, 60.5], [37.5, 77.5]]}
     >

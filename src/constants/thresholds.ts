@@ -5,6 +5,6 @@ export const ALERT_THRESHOLDS: AlertThresholds = {
   critical: 3000,
 };
 
-export const FORECAST_DAYS = 30;
+export const FORECAST_DAYS = 7;
 export const PAST_DAYS = 7;
 export const REFRESH_INTERVAL = 21600000; // 6 hours in milliseconds
