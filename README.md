@@ -8,7 +8,7 @@ FloodFM is a React + TypeScript dashboard that monitors flood risk across villag
 - Leaflet + react-leaflet
 - @picocss/pico
 - Open-Meteo `openmeteo` package
-- Scikit-learn + pandas
+- Scikit-learn + pandas + numpy
 - FastAPI 
 
 
